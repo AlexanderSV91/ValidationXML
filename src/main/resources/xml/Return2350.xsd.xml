@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Return returnVersion="2020v3.0">
+    <ReturnHeader binaryAttachmentCnt="200">
+        <ReturnTs>2008-09-29T04:49:45</ReturnTs>
+        <TaxYr>string</TaxYr>
+        <TaxPeriodBeginDt>2014-09-19</TaxPeriodBeginDt>
+        <TaxPeriodEndDt>2006-08-19+03:00</TaxPeriodEndDt>
+        <!--Optional:-->
+        <ConsortiumReturnCd>Free Fillable Forms</ConsortiumReturnCd>
+        <!--Optional:-->
+        <ISPNum>string</ISPNum>
+        <SoftwareId>string</SoftwareId>
+        <!--Optional:-->
+        <SoftwareVersionNum>string</SoftwareVersionNum>
+        <OriginatorGrp>
+            <EFIN>string</EFIN>
+            <OriginatorTypeCd>LargeTaxpayer</OriginatorTypeCd>
+            <!--Optional:-->
+            <PractitionerPINGrp>
+                <EFIN>string</EFIN>
+                <PIN>string</PIN>
+            </PractitionerPINGrp>
+        </OriginatorGrp>
+        <!--Optional:-->
+        <SelfSelectPINGrp>
+            <!--Optional:-->
+            <PrimaryBirthDt>2017-05-15</PrimaryBirthDt>
+            <!--Optional:-->
+            <SpouseBirthDt>2013-12-21+02:00</SpouseBirthDt>
+            <!--Optional:-->
+            <PrimaryPriorYearAGIAmt>100</PrimaryPriorYearAGIAmt>
+            <!--Optional:-->
+            <SpousePriorYearAGIAmt>100</SpousePriorYearAGIAmt>
+            <!--Optional:-->
+            <PrimaryPriorYearPIN>string</PrimaryPriorYearPIN>
+            <!--Optional:-->
+            <SpousePriorYearPIN>string</SpousePriorYearPIN>
+        </SelfSelectPINGrp>
+        <!--Optional:-->
+        <PINTypeCd>Practitioner</PINTypeCd>
+        <!--Optional:-->
+        <JuratDisclosureCd>2350 WITHOUT EFW</JuratDisclosureCd>
+        <!--Optional:-->
+        <PrimaryPINEnteredByCd>Taxpayer</PrimaryPINEnteredByCd>
+        <!--Optional:-->
+        <SpousePINEnteredByCd>Taxpayer</SpousePINEnteredByCd>
+        <!--Optional:-->
+        <PrimarySignaturePIN>string</PrimarySignaturePIN>
+        <!--Optional:-->
+        <SpouseSignaturePIN>string</SpouseSignaturePIN>
+        <!--Optional:-->
+        <AgentSignaturePIN>string</AgentSignaturePIN>
+        <!--Optional:-->
+        <PrimarySignatureDt>2010-03-18</PrimarySignatureDt>
+        <!--Optional:-->
+        <SpouseSignatureDt>2018-12-28+02:00</SpouseSignatureDt>
+        <!--Optional:-->
+        <AgentSignatureDt>2017-11-01+02:00</AgentSignatureDt>
+        <ReturnTypeCd>2350</ReturnTypeCd>
+        <Filer>
+            <PrimarySSN>string</PrimarySSN>
+            <!--Optional:-->
+            <SpouseSSN>string</SpouseSSN>
+            <PrimaryNm>string</PrimaryNm>
+            <!--Optional:-->
+            <SpouseNm>string</SpouseNm>
+            <!--Optional:-->
+            <AgentPersonNm>string</AgentPersonNm>
+            <PrimaryNameControlTxt>string</PrimaryNameControlTxt>
+            <!--Optional:-->
+            <SpouseNameControlTxt>string</SpouseNameControlTxt>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <USAddress>
+                <AddressLine1Txt>string</AddressLine1Txt>
+                <!--Optional:-->
+                <AddressLine2Txt>string</AddressLine2Txt>
+                <CityNm>string</CityNm>
+                <StateAbbreviationCd>WV</StateAbbreviationCd>
+                <ZIPCd>string</ZIPCd>
+            </USAddress>
+            <ForeignAddress>
+                <AddressLine1Txt>string</AddressLine1Txt>
+                <!--Optional:-->
+                <AddressLine2Txt>string</AddressLine2Txt>
+                <!--Optional:-->
+                <CityNm>string</CityNm>
+                <!--Optional:-->
+                <ProvinceOrStateNm>string</ProvinceOrStateNm>
+                <CountryCd>SM</CountryCd>
+                <!--Optional:-->
+                <ForeignPostalCd>string</ForeignPostalCd>
+            </ForeignAddress>
+        </Filer>
+    </ReturnHeader>
+    <ReturnData documentCnt="201">
+        <IRS2350 documentId="string" softwareId="string" softwareVersionNum="string"
+                 documentName="IRS2350" referenceDocumentId="string"
+                 referenceDocumentName="IRSESPayment IRSPayment OtherSignatureExplanationStmt SpouseSignatureStatement">
+            <!--Optional:-->
+            <RequestedFilingExtensionDt>2015-08-24</RequestedFilingExtensionDt>
+            <!--Optional:-->
+            <RequestedOtherTaxYrExtensionDt>2015-06-18+03:00</RequestedOtherTaxYrExtensionDt>
+            <!--Optional:-->
+            <FilingExtensionPrevGrantedInd>false</FilingExtensionPrevGrantedInd>
+            <!--Optional:-->
+            <AdnlTimeToAllocateMoveExpnsInd>true</AdnlTimeToAllocateMoveExpnsInd>
+            <ForeignCountryFirstArrivalDt>2017-10-20</ForeignCountryFirstArrivalDt>
+            <QualifyingResidentPeriodBegDt>2000-01-06</QualifyingResidentPeriodBegDt>
+            <QualifyingResidentPeriodEndDt>2017-08-18</QualifyingResidentPeriodEndDt>
+            <ForeignAddress>
+                <AddressLine1Txt>string</AddressLine1Txt>
+                <!--Optional:-->
+                <AddressLine2Txt>string</AddressLine2Txt>
+                <!--Optional:-->
+                <CityNm>string</CityNm>
+                <!--Optional:-->
+                <ProvinceOrStateNm>string</ProvinceOrStateNm>
+                <CountryCd>ST</CountryCd>
+                <!--Optional:-->
+                <ForeignPostalCd>string</ForeignPostalCd>
+            </ForeignAddress>
+            <!--Optional:-->
+            <ExpectedUSReturnDt>2015-10-10+03:00</ExpectedUSReturnDt>
+            <!--Optional:-->
+            <ExtsnRequestIncomeTaxPaidAmt>100</ExtsnRequestIncomeTaxPaidAmt>
+        </IRS2350>
+        <!--Optional:-->
+        <OtherSignatureExplanationStmt documentId="string" softwareId="string"
+                                       softwareVersionNum="string"
+                                       documentName="OtherSignatureExplanationStmt">
+            <!--Optional:-->
+            <ExplanationTxt>string</ExplanationTxt>
+        </OtherSignatureExplanationStmt>
+        <!--Optional:-->
+        <SpouseSignatureStatement documentId="string" softwareId="string"
+                                  softwareVersionNum="string"
+                                  documentName="SpouseSignatureStatement">
+            <!--Optional:-->
+            <ExplanationTxt>string</ExplanationTxt>
+        </SpouseSignatureStatement>
+        <!--Optional:-->
+        <IRSPayment documentId="string" softwareId="string" softwareVersionNum="string"
+                    documentName="IRSPayment">
+            <RoutingTransitNum>string</RoutingTransitNum>
+            <BankAccountNum>string</BankAccountNum>
+            <BankAccountTypeCd>2</BankAccountTypeCd>
+            <PaymentAmt>201</PaymentAmt>
+            <RequestedPaymentDt>2009-04-10</RequestedPaymentDt>
+            <TaxpayerDaytimePhoneNum>string</TaxpayerDaytimePhoneNum>
+        </IRSPayment>
+        <!--0 to 4 repetitions:-->
+        <IRSESPayment documentId="string" softwareId="string" softwareVersionNum="string"
+                      documentName="IRSESPayment">
+            <RoutingTransitNum>string</RoutingTransitNum>
+            <BankAccountNum>string</BankAccountNum>
+            <BankAccountTypeCd>1</BankAccountTypeCd>
+            <PaymentAmt>201</PaymentAmt>
+            <EstimatedPaymentDueDt>2021-01-15</EstimatedPaymentDueDt>
+            <TaxpayerDaytimePhoneNum>string</TaxpayerDaytimePhoneNum>
+        </IRSESPayment>
+    </ReturnData>
+</Return>
