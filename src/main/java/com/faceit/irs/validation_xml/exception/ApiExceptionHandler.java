@@ -4,9 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.xml.sax.SAXParseException;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
 
 @ControllerAdvice
@@ -45,6 +45,23 @@ public class ApiExceptionHandler {
         HttpStatus httpStatus = HttpStatus.UNSUPPORTED_MEDIA_TYPE;
 
         Map<String, String> message = Map.of(e.getMessage(), e.getMessage());
+
+        ApiException apiException = new ApiException(
+                e.getClass().getSimpleName(),
+                message,
+                httpStatus,
+                LocalDateTime.now());
+        return new ResponseEntity<>(apiException, httpStatus);
+    }
+
+    @ExceptionHandler(value = {ValidationException.class})
+    public ResponseEntity<Object> handlerValidateException(ValidationException e) {
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+
+        Map<String, String> message = new HashMap<>();
+        message.put("lineNumber", String.valueOf(e.getLineNumber()));
+        message.put("columnNumber", String.valueOf(e.getColumnNumber()));
+        message.put("description", e.getMessage());
 
         ApiException apiException = new ApiException(
                 e.getClass().getSimpleName(),

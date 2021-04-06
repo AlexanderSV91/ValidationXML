@@ -4,7 +4,6 @@ import com.faceit.irs.validation_xml.dto.XmlValidResponse;
 import com.faceit.irs.validation_xml.exception.RequestNoContentException;
 import com.faceit.irs.validation_xml.exception.RequestUnsuportMediaTypeException;
 import com.faceit.irs.validation_xml.service.XmlService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +15,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping(value = {"/api/v1/xml"})
-@RequiredArgsConstructor
 public class XmlControllerRest {
 
     private final XmlService xmlService;
+
+    public XmlControllerRest(XmlService xmlService) {
+        this.xmlService = xmlService;
+    }
 
     @PostMapping(path = "/valid", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<XmlValidResponse> validationFile(@RequestParam("file") final MultipartFile file) {

@@ -2,10 +2,12 @@ package com.faceit.irs.validation_xml.service.impl;
 
 import com.faceit.irs.validation_xml.dto.XmlValidResponse;
 import com.faceit.irs.validation_xml.exception.FileNotFoundException;
+import com.faceit.irs.validation_xml.exception.ValidationException;
 import com.faceit.irs.validation_xml.service.XmlService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import javax.annotation.PostConstruct;
 import javax.xml.XMLConstants;
@@ -14,6 +16,7 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 @Service
@@ -44,8 +47,12 @@ public class XmlServiceImpl implements XmlService {
         try {
             Validator validator = xsdSchema.newValidator();
             validator.validate(new StreamSource(file.getInputStream()));
-        } catch (Exception e) {
+        } catch (IOException e) {
             isValid = false;
+        } catch (SAXException e) {
+            SAXParseException saxParseException = (SAXParseException) e;
+            throw new ValidationException(saxParseException.getMessage(),
+                    saxParseException.getLineNumber(), saxParseException.getColumnNumber());
         }
         return new XmlValidResponse(file.getOriginalFilename(), isValid, LocalDateTime.now());
     }
