@@ -28,11 +28,11 @@ public class XmlServiceImpl implements XmlService {
 
     @PostConstruct
     private void init() {
-        File xsdSchemaFile = new File(REF_XSD_PATH);
+        final File xsdSchemaFile = new File(REF_XSD_PATH);
         if (xsdSchemaFile.exists()) {
             try {
-                SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-                xsdSchema = factory.newSchema(xsdSchemaFile);
+                final SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+                this.xsdSchema = factory.newSchema(xsdSchemaFile);
             } catch (SAXException e) {
                 e.printStackTrace();
             }
@@ -45,12 +45,12 @@ public class XmlServiceImpl implements XmlService {
     public XmlValidResponse validation(final MultipartFile file) {
         boolean isValid = true;
         try {
-            Validator validator = xsdSchema.newValidator();
+            final Validator validator = xsdSchema.newValidator();
             validator.validate(new StreamSource(file.getInputStream()));
         } catch (IOException e) {
             isValid = false;
         } catch (SAXException e) {
-            SAXParseException saxParseException = (SAXParseException) e;
+            final SAXParseException saxParseException = (SAXParseException) e;
             throw new ValidationException(saxParseException.getMessage(),
                     saxParseException.getLineNumber(), saxParseException.getColumnNumber());
         }

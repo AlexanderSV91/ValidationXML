@@ -1,20 +1,22 @@
 package com.faceit.irs.validation_xml.exception;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@AllArgsConstructor
-@Getter
+@Value
+@RequiredArgsConstructor
 public class ApiException {
 
-    private final String nameException;
-    private final Map<String, String> message;
-    private final HttpStatus httpStatus;
+    String nameException;
+
+    Map<String, String> message;
+
+    HttpStatus httpStatus;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private final LocalDateTime timestamp;
+    LocalDateTime timestamp;
 }

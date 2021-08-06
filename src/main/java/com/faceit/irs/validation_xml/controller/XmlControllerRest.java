@@ -4,7 +4,6 @@ import com.faceit.irs.validation_xml.dto.XmlValidResponse;
 import com.faceit.irs.validation_xml.exception.RequestNoContentException;
 import com.faceit.irs.validation_xml.exception.RequestUnsuportMediaTypeException;
 import com.faceit.irs.validation_xml.service.XmlService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,13 +26,12 @@ public class XmlControllerRest {
     public ResponseEntity<XmlValidResponse> validationFile(@RequestParam("file") final MultipartFile file) {
         if (file.isEmpty()) {
             throw new RequestNoContentException("File is empty");
+        }
+
+        if (MediaType.APPLICATION_XML_VALUE.equals(file.getContentType())) {
+            return ResponseEntity.ok(this.xmlService.validation(file));
         } else {
-            if (MediaType.APPLICATION_XML_VALUE.equals(file.getContentType())) {
-                XmlValidResponse xmlValidResponse = xmlService.validation(file);
-                return ResponseEntity.status(HttpStatus.OK).body(xmlValidResponse);
-            } else {
-                throw new RequestUnsuportMediaTypeException("Unsupported media type");
-            }
+            throw new RequestUnsuportMediaTypeException("Unsupported media type");
         }
     }
 }
