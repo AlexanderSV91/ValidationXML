@@ -45,7 +45,7 @@ public class XmlServiceImpl implements XmlService {
     public XmlValidResponse validation(final MultipartFile file) {
         boolean isValid = true;
         try {
-            final Validator validator = xsdSchema.newValidator();
+            final Validator validator = this.xsdSchema.newValidator();
             validator.validate(new StreamSource(file.getInputStream()));
         } catch (IOException e) {
             isValid = false;
